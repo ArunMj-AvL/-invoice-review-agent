@@ -1,0 +1,13 @@
+po_id,vendor_id,item,ordered_qty,unit_price_inr,po_date
+PO-101,V-01,Laptops,10,47500,2026-11-10
+PO-102,V-02,Office chairs,20,6200,2026-11-11
+PO-103,V-03,Network switches,5,28500,2026-11-12
+PO-104,V-01,Keyboards,50,850,2026-11-12
+PO-105,V-04,Printers,4,16200,2026-11-13
+PO-106,V-05,Monitors,15,11900,2026-11-13
+PO-107,V-02,Desks,12,10400,2026-11-14
+PO-108,V-06,UPS units,8,7800,2026-11-14
+PO-109,V-03,Routers,9,6900,2026-11-15
+PO-110,V-05,Cables,100,140,2026-11-15
+PO-111,V-07,Projectors,3,35200,2026-11-16
+PO-112,V-04,Headsets,25,1800,2026-11-16

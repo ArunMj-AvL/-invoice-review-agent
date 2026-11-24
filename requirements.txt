@@ -1,0 +1,11 @@
+# Niranjan: pin exact versions after installing (pip freeze | grep -i <name>)
+langgraph
+langchain
+langchain-core
+langchain-openai
+pydantic
+crewai
+autogen-agentchat
+autogen-ext[openai]
+python-dotenv
+pytest

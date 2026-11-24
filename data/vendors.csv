@@ -1,0 +1,8 @@
+vendor_id,vendor_name,risk_tier,active
+V-01,Northstar Devices,low,yes
+V-02,Metro Office,medium,yes
+V-03,NetLink Systems,medium,yes
+V-04,PrintWell,low,yes
+V-05,Display Hub,low,yes
+V-06,PowerSafe,high,yes
+V-07,AV Partners,low,no
