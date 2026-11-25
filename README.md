@@ -30,5 +30,21 @@ _Each member adds a short section below: what the module does and how to run its
 
 ### Rules (Niranjan)
 ### LangChain + CrewAI (Aamir)
+
+### LangChain explanation
+
+`app/langchain_components.py` builds a Pydantic-validated explanation from the case facts and deterministic `rule_result`. The decision, reasons, evidence, and invoice ID are copied from the rule result; the model writes only the summary and next action. Invalid structured output is retried up to two times before an adapter error is raised.
+
+Run with `USE_MOCK_LLM=1` to use the canned explanation without an API key.
+
+### CrewAI invoice investigation
+
+`app/crewai_adapter.py` exposes `run_crew(case_facts, rule_result, correlation_id="", mock=None)`. It runs an invoice analyst and vendor risk analyst and returns an advisory memo, suggested next steps, and model-call count. The crew uses only the supplied facts and cannot change the deterministic decision or initiate payment.
+
+Run the standalone demo from the repository root:
+
+```powershell```
+python -m examples.run_crew_standalone
+
 ### AutoGen + tests + benchmark (Anit)
 ### LangGraph workflow (Lead)
