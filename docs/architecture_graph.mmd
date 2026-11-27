@@ -1,0 +1,20 @@
+flowchart TD
+    S([START]) --> L[load_invoice<br/>validate request, case/thread ID, correlation ID]
+    L -->|invalid request| E([END])
+    L -->|valid| M[three_way_match<br/>deterministic rules: Decimal, exact IDs]
+    M --> R{route_by_exception}
+    R -->|AUTO_CLEAR| DC[direct_clear]
+    R -->|"HOLD / DUPLICATE / high-risk vendor"| C[crew_reconciliation<br/>CrewAI memo]
+    R -->|"NEEDS_INFORMATION / plain FINANCE_APPROVAL"| D
+    DC --> D
+    C -->|"failed, attempts left"| C
+    C -->|"duplicate or 2+ flags"| A[autogen_dispute_review<br/>AutoGen critique]
+    C -->|ok or escalated| D
+    A -->|"failed, attempts left"| A
+    A -->|ok or escalated| D
+    D[deterministic_decision<br/>copied from rules, agents cannot override] --> X[explain_findings<br/>LangChain + Pydantic]
+    X --> Q{approval required?}
+    Q -->|yes| H[["human_approval<br/>interrupt() - pauses on thread CASE-id"]]
+    Q -->|no| W
+    H -->|"resume: approve / reject"| W[audit_write<br/>idempotent audit_log.jsonl]
+    W --> E

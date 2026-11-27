@@ -1,0 +1,40 @@
+{
+  "invoice_id": "INV-004",
+  "case_id": "CASE-INV-004",
+  "thread_id": "CASE-INV-004",
+  "correlation_id": "db376ddbaef3",
+  "decision": "HOLD_FOR_REVIEW",
+  "reasons": [
+    "UNIT_PRICE_MISMATCH"
+  ],
+  "evidence": [
+    "INV-004",
+    "PO-104",
+    "GR-04",
+    "V-01",
+    "P3"
+  ],
+  "policy_clauses": [
+    "P3"
+  ],
+  "approval_required": true,
+  "action_executed": false,
+  "status": "COMPLETED",
+  "final_status": "REJECTED",
+  "review_id": "REV-INV-004",
+  "explanation": "INV-004 -> HOLD_FOR_REVIEW. Findings: UNIT_PRICE_MISMATCH. Invoice total INR 45000.",
+  "next_action": "Hold the invoice and send the evidence to a human reviewer.",
+  "explanation_source": "deterministic_fallback",
+  "crew_status": "OK",
+  "autogen_status": "NOT_REQUIRED",
+  "audit_created": true,
+  "trace": [
+    "[load_invoice] accepted invoice_id=INV-004",
+    "[three_way_match] decision=HOLD_FOR_REVIEW reasons=['UNIT_PRICE_MISMATCH']",
+    "[crew_reconciliation] attempt 1/3: OK",
+    "[deterministic_decision] final_decision=HOLD_FOR_REVIEW (from rules)",
+    "[explain_findings] explanation_source=deterministic_fallback",
+    "[human_approval] received action=reject actor=demo.reviewer valid=True",
+    "[audit_write] final_status=REJECTED audit_created=True"
+  ]
+}

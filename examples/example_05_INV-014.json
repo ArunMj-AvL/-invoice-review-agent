@@ -1,0 +1,36 @@
+{
+  "invoice_id": "INV-014",
+  "case_id": "CASE-INV-014",
+  "thread_id": "CASE-INV-014",
+  "correlation_id": "4f5aac7ec146",
+  "decision": "NEEDS_INFORMATION",
+  "reasons": [
+    "MISSING_PO"
+  ],
+  "evidence": [
+    "INV-014",
+    "V-01",
+    "P1"
+  ],
+  "policy_clauses": [
+    "P1"
+  ],
+  "approval_required": false,
+  "action_executed": false,
+  "status": "COMPLETED",
+  "final_status": "NEEDS_INFORMATION",
+  "review_id": "REV-INV-014",
+  "explanation": "INV-014 -> NEEDS_INFORMATION. Findings: MISSING_PO. Invoice total INR 6000.",
+  "next_action": "Request the missing or corrected source records, then re-run the checks.",
+  "explanation_source": "deterministic_fallback",
+  "crew_status": "NOT_REQUIRED",
+  "autogen_status": "NOT_REQUIRED",
+  "audit_created": true,
+  "trace": [
+    "[load_invoice] accepted invoice_id=INV-014",
+    "[three_way_match] decision=NEEDS_INFORMATION reasons=['MISSING_PO']",
+    "[deterministic_decision] final_decision=NEEDS_INFORMATION (from rules)",
+    "[explain_findings] explanation_source=deterministic_fallback",
+    "[audit_write] final_status=NEEDS_INFORMATION audit_created=True"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "invoice_id": "INV-002",
+  "case_id": "CASE-INV-002",
+  "thread_id": "CASE-INV-002",
+  "correlation_id": "e91fd5b33788",
+  "decision": "HOLD_FOR_REVIEW",
+  "reasons": [
+    "QTY_EXCEEDS_RECEIVED",
+    "OVER_THRESHOLD"
+  ],
+  "evidence": [
+    "INV-002",
+    "PO-102",
+    "GR-02",
+    "V-02",
+    "P2",
+    "P6"
+  ],
+  "policy_clauses": [
+    "P2",
+    "P6"
+  ],
+  "approval_required": true,
+  "action_executed": false,
+  "status": "COMPLETED",
+  "final_status": "APPROVED_SIMULATION",
+  "review_id": "REV-INV-002",
+  "explanation": "INV-002 -> HOLD_FOR_REVIEW. Findings: QTY_EXCEEDS_RECEIVED, OVER_THRESHOLD. Invoice total INR 124000.",
+  "next_action": "Hold the invoice and send the evidence to a human reviewer.",
+  "explanation_source": "deterministic_fallback",
+  "crew_status": "OK",
+  "autogen_status": "OK",
+  "audit_created": true,
+  "trace": [
+    "[load_invoice] accepted invoice_id=INV-002",
+    "[three_way_match] decision=HOLD_FOR_REVIEW reasons=['QTY_EXCEEDS_RECEIVED', 'OVER_THRESHOLD']",
+    "[crew_reconciliation] attempt 1/3: OK",
+    "[autogen_dispute_review] attempt 1/3: OK",
+    "[deterministic_decision] final_decision=HOLD_FOR_REVIEW (from rules); note: AutoGen reviewer raised concerns (advisory only)",
+    "[explain_findings] explanation_source=deterministic_fallback",
+    "[human_approval] received action=approve actor=demo.reviewer valid=True",
+    "[audit_write] final_status=APPROVED_SIMULATION audit_created=True"
+  ]
+}

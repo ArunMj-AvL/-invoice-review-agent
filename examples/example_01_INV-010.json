@@ -1,0 +1,47 @@
+{
+  "invoice_id": "INV-010",
+  "case_id": "CASE-INV-010",
+  "thread_id": "CASE-INV-010",
+  "correlation_id": "d91278baab65",
+  "decision": "AUTO_CLEAR",
+  "reasons": [],
+  "evidence": [
+    "INV-010",
+    "PO-110",
+    "GR-10",
+    "V-05",
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "policy_clauses": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "approval_required": false,
+  "action_executed": false,
+  "status": "COMPLETED",
+  "final_status": "AUTO_CLEARED_SIMULATION",
+  "review_id": "REV-INV-010",
+  "explanation": "INV-010 -> AUTO_CLEAR. Invoice total INR 14000.",
+  "next_action": "Record the simulated clearance in the audit log. No payment is made.",
+  "explanation_source": "deterministic_fallback",
+  "crew_status": "NOT_REQUIRED",
+  "autogen_status": "NOT_REQUIRED",
+  "audit_created": true,
+  "trace": [
+    "[load_invoice] accepted invoice_id=INV-010",
+    "[three_way_match] decision=AUTO_CLEAR reasons=[]",
+    "[direct_clear] clean invoice; no specialist review needed",
+    "[deterministic_decision] final_decision=AUTO_CLEAR (from rules)",
+    "[explain_findings] explanation_source=deterministic_fallback",
+    "[audit_write] final_status=AUTO_CLEARED_SIMULATION audit_created=True"
+  ]
+}
