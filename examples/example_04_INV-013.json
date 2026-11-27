@@ -1,0 +1,48 @@
+{
+  "invoice_id": "INV-013",
+  "case_id": "CASE-INV-013",
+  "thread_id": "CASE-INV-013",
+  "correlation_id": "722487c3f84d",
+  "decision": "POSSIBLE_DUPLICATE",
+  "reasons": [
+    "POSSIBLE_DUPLICATE",
+    "CUMULATIVE_OVERBILL",
+    "OVER_THRESHOLD"
+  ],
+  "evidence": [
+    "INV-013",
+    "PO-101",
+    "GR-01",
+    "V-01",
+    "INV-001",
+    "P5",
+    "P2",
+    "P6"
+  ],
+  "policy_clauses": [
+    "P5",
+    "P2",
+    "P6"
+  ],
+  "approval_required": true,
+  "action_executed": false,
+  "status": "COMPLETED",
+  "final_status": "REJECTED",
+  "review_id": "REV-INV-013",
+  "explanation": "INV-013 -> POSSIBLE_DUPLICATE. Findings: POSSIBLE_DUPLICATE, CUMULATIVE_OVERBILL, OVER_THRESHOLD. Invoice total INR 475000.",
+  "next_action": "Have a human compare it with the earlier matching invoice (not a fraud finding).",
+  "explanation_source": "deterministic_fallback",
+  "crew_status": "OK",
+  "autogen_status": "OK",
+  "audit_created": true,
+  "trace": [
+    "[load_invoice] accepted invoice_id=INV-013",
+    "[three_way_match] decision=POSSIBLE_DUPLICATE reasons=['POSSIBLE_DUPLICATE', 'CUMULATIVE_OVERBILL', 'OVER_THRESHOLD']",
+    "[crew_reconciliation] attempt 1/3: OK",
+    "[autogen_dispute_review] attempt 1/3: OK",
+    "[deterministic_decision] final_decision=POSSIBLE_DUPLICATE (from rules); note: AutoGen reviewer raised concerns (advisory only)",
+    "[explain_findings] explanation_source=deterministic_fallback",
+    "[human_approval] received action=reject actor=demo.reviewer valid=True",
+    "[audit_write] final_status=REJECTED audit_created=True"
+  ]
+}

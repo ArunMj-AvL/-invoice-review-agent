@@ -1,5 +1,6 @@
 # Niranjan: pin exact versions after installing (pip freeze | grep -i <name>)
 langgraph
+langgraph-checkpoint-sqlite
 langchain
 langchain-core
 langchain-openai
